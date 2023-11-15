@@ -1,5 +1,5 @@
 {% set name = "loadmydata" %}
-{% set version = "0.0.10" %}
+{% set version = "0.0.11" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/loadmydata-{{ version }}.tar.gz
-  sha256: 91964f04e7ab7024186c3e1b8e27b41fc4a99c27618de4a94f89e9364c3d060b
+  sha256: 7e528827ff59831bcbd895c061ef7e65c02e0dd16822119b316210f6e0bb02ff
 
 build:
   number: 0
