@@ -6,23 +6,23 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/loadmydata-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/loadmydata-{{ version }}.tar.gz
   sha256: 7e528827ff59831bcbd895c061ef7e65c02e0dd16822119b316210f6e0bb02ff
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vvv
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
     - setuptools_scm >=3.4
   run:
     - numpy
     - pandas
-    - python >=3.6
+    - python >={{ python_min }}
     - requests
     - scikit-learn >=0.23.0
     - scipy >=1.3.0
@@ -36,6 +36,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/deepcharles/loadmydata
